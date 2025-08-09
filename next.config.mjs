@@ -3,23 +3,18 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
     unoptimized: true,
   },
-  output: 'export',
-  trailingSlash: true,
-  distDir: 'out',
-
-  // 👇 Add this block to fix the warning
-  experimental: {
-    allowedDevOrigins: [
-      'http://localhost:3000',
-      'http://192.168.1.2:3000',
-    ],
+  // Remove export configuration for local development
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://localhost:5000/api/:path*',
+      },
+    ];
   },
 }
 
-export default nextConfig;
+export default nextConfig
