@@ -55,18 +55,21 @@ export default function SEOAnalyzer() {
 
     setLoading(true);
     setError("");
-    
+
     try {
-      const response = await fetch(`/api/crawl?url=${encodeURIComponent(url)}`);
-      
+      const API_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || 'http://localhost:8000';
+      const response = await fetch(`${API_URL}/api/crawl?url=${encodeURIComponent(url)}`);
+
       if (!response.ok) {
-        throw new Error("Failed to analyze website");
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
-      
+
       const data = await response.json();
       setSeoData(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Analysis failed");
+      console.error('SEO Analysis Error:', err);
+      setError(err instanceof Error ? err.message : "Failed to analyze website");
     } finally {
       setLoading(false);
     }
