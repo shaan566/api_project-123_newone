@@ -2,22 +2,14 @@
   "name": "seo-research-pro",
   "version": "0.1.0",
   "private": true,
- "scripts": {
-  "dev": "next dev --turbopack",
-<<<<<<< HEAD
-  "dev:full": "concurrently \"npm run dev\" \"cd backend && uvicorn main:app --reload\"",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint"
-},
-=======
-  "dev:classic": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint"
-}
-,
->>>>>>> 59c45857b34d2eb3ee7d5ebefcd93fa3cac60ba4
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "dev:full": "concurrently \"npm run dev\" \"cd backend && uvicorn main:app --reload\"",
+    "dev:classic": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "1.2.2",
@@ -57,7 +49,7 @@
     "geist": "^1.3.1",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
-    "next": "^15.4.5",
+    "next": "^15.4.6",
     "next-themes": "^0.4.4",
     "react": "^18.3.1",
     "react-day-picker": "9.8.0",
@@ -79,6 +71,4 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.9.2"
   }
-
-
 }
