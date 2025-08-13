@@ -58,7 +58,7 @@ export default function SEOAnalyzer() {
 
     try {
       const API_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || 'http://localhost:8000';
-      const response = await fetch(`${API_URL}/api/crawl?url=${encodeURIComponent(url)}`);
+      const response = await fetch(`${API_URL}/analyze?url=${encodeURIComponent(url)}`);
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));

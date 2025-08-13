@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 @echo off
 echo Starting SEO Research Pro...
@@ -9,6 +9,7 @@ call npm install
 cd backend
 call pip install -r requirements.txt
 cd ..
+
 
 echo.
 echo Creating environment file...

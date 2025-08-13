@@ -90,6 +90,12 @@ class CrawlResponse(BaseModel):
     meta_data: Dict[str, Any]
     readability: ReadabilityAnalysis
     recommendations: List[Recommendation]
+    # New keyword fields from scraper + Gemini
+    analysis_keywords: List[str] = []
+    gemini_keywords: List[str] = []
+    combined_keywords: List[str] = []
+    # Raw meta keywords text (if present on page)
+    meta_keywords_text: str = ""
     analysis_timestamp: float
 
 class KeywordResearchRequest(BaseModel):
