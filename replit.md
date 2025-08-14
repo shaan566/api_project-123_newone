@@ -30,7 +30,9 @@ Preferred communication style: Simple, everyday language.
   - `CompetitorAnalyzer`: Competitive intelligence and analysis
 - **Error Handling**: Comprehensive logging and error tracking with request statistics
 - **CORS**: Cross-origin resource sharing enabled for frontend integration
- uvicorn main:app --reload
+ ```bash
+uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
+```
 
 ### Data Processing Architecture
 - **Content Extraction**: Multi-layered approach using trafilatura, BeautifulSoup, and Selenium
