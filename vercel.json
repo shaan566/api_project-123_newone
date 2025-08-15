@@ -6,8 +6,5 @@
     "app/**/*.tsx": {
       "maxDuration": 30
     }
-  },
-  "env": {
-    "NEXT_PUBLIC_FASTAPI_URL": "@next_public_fastapi_url"
   }
 }
